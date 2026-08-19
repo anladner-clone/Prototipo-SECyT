@@ -1,0 +1,352 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Iniciar Sesión - Sistema de Gestión">
+    <main class="login">
+        <div class="login__wrapper">
+            <header class="login__header">
+                <div class="login__logo">
+                    <img
+                        src="/img/logo-utn-siglas.png"
+                        alt="UTN"
+                        class="login__logo-img"
+                    />
+                </div>
+                <h1 class="login__title">Sistema de Gestión</h1>
+                <p class="login__subtitle">
+                    Secretaría de Ciencia y Tecnología - UTN
+                </p>
+            </header>
+
+            <section class="login__content">
+                <form class="login-form">
+                    <fieldset class="login-form__role-selector">
+                        <label class="login-form__role-label">
+                            <input
+                                class="login-form__role-input"
+                                checked=""
+                                name="role"
+                                type="radio"
+                                value="personal"
+                            />
+                            <span class="login-form__role-text"
+                                >Personal Secretaría</span
+                            >
+                        </label>
+
+                        <label class="login-form__role-label">
+                            <input
+                                class="login-form__role-input"
+                                name="role"
+                                type="radio"
+                                value="investigador"
+                            />
+                            <span class="login-form__role-text"
+                                >Investigador</span
+                            >
+                        </label>
+                    </fieldset>
+
+                    <div class="login-form__group">
+                        <label class="login-form__label" for="email"
+                            >Correo Electrónico</label
+                        >
+                        <div class="login-form__input-wrapper">
+                            <span
+                                class="login-form__icon material-symbols-outlined"
+                                >mail</span
+                            >
+                            <input
+                                class="login-form__input"
+                                id="email"
+                                name="email"
+                                placeholder="usuario@sanfrancisco.utn.edu.ar"
+                                required=""
+                                type="email"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="login-form__group">
+                        <div class="login-form__group-header">
+                            <label class="login-form__label" for="password"
+                                >Contraseña</label
+                            >
+                            <a class="login-form__link" href="#"
+                                >¿Olvidaste tu contraseña?</a
+                            >
+                        </div>
+                        <div class="login-form__input-wrapper">
+                            <span
+                                class="login-form__icon material-symbols-outlined"
+                                >lock</span
+                            >
+                            <input
+                                class="login-form__input"
+                                id="password"
+                                name="password"
+                                placeholder="••••••••"
+                                required=""
+                                type="password"
+                            />
+                            <button
+                                class="login-form__btn-toggle"
+                                aria-label="Mostrar contraseña"
+                                type="button"
+                            >
+                                <span class="material-symbols-outlined"
+                                    >visibility</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="login-form__submit" type="submit">
+                        <span class="login-form__submit-text"
+                            >Iniciar Sesión</span
+                        >
+                        <span
+                            class="login-form__submit-icon material-symbols-outlined"
+                            >arrow_forward</span
+                        >
+                    </button>
+                </form>
+
+                <footer class="login__footer">
+                    <p class="login__footer-text">
+                        Universidad Tecnológica Nacional
+                    </p>
+                    <p class="login__footer-text">
+                        Facultad Regional San Francisco
+                    </p>
+                </footer>
+            </section>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .login {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Inter", system-ui, sans-serif;
+        background: #f4f4f4;
+    }
+
+    .login__wrapper {
+        width: 100%;
+        max-width: 420px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        border-radius: 1rem;
+        background: #fff;
+    }
+
+    .login__header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .login__logo-img {
+        width: 255px;
+        height: auto;
+    }
+
+    .login__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+    .login__subtitle {
+        font-size: 0.9rem;
+        color: #475569;
+    }
+
+    .login__content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .login-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+
+    .login-form__role-selector {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.5rem;
+        padding: 0.2rem 0.3rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: #f4f4f4;
+    }
+
+    .login-form__role-input[type="radio"] {
+        display: none;
+        appearance: none;
+    }
+
+    .login-form__role-label {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0.7rem;
+        border-radius: 0.5rem;
+        background: transparent;
+        cursor: pointer;
+        text-align: center;
+        transition:
+            background 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .login-form__role-label:has(.login-form__role-input:checked) {
+        background: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-form__role-text {
+        font-size: 0.75rem;
+        color: #475569;
+    }
+
+    .login-form__role-label:has(.login-form__role-input:checked)
+        .login-form__role-text {
+        color: #0f172a;
+        font-weight: 500;
+    }
+
+    .login-form__group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .login-form__group-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .login-form__label {
+        color: inherit;
+    }
+
+    .login-form__link {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #48e;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .login-form__link:hover {
+        color: #386ec0;
+    }
+
+    .login-form__input-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.7rem;
+        border: 2px solid #bbb;
+        background: #fff;
+    }
+
+    .login-form__icon {
+        font-size: 1.5rem;
+        color: #bbb;
+    }
+
+    .login-form__input {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: #0f172a;
+        font-size: 1rem;
+    }
+
+    .login-form__btn-toggle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        background: none;
+        color: #bbb;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .login-form__btn-toggle:focus {
+        outline: none;
+    }
+
+    .login-form__submit {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1rem;
+        border: none;
+        background: #002b49;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .login__footer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid #bbb;
+    }
+
+    .login__footer-text {
+        font-size: 0.75rem;
+        color: #475569;
+    }
+</style>
