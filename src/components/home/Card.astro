@@ -1,0 +1,97 @@
+---
+const { image, rol, title, description, link } = Astro.props;
+---
+
+<a class="prototype-card" href={link}>
+    <img class="prototype-card__image" src={image} alt={title} />
+    <div class="prototype-card__content">
+        <p class="prototype-card__role">{rol}</p>
+        <p class="prototype-card__title">{title}</p>
+        <p class="prototype-card__description">{description}</p>
+    </div>
+</a>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .prototype-card {
+        display: block;
+        width: 100%;
+        max-width: 32rem;
+        overflow: hidden;
+        color: inherit;
+        text-decoration: none;
+        background-color: #ffffff;
+        border: 1px solid #d9dee7;
+        border-radius: 0.75rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .prototype-card:hover {
+        border-color: #c8d0dc;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        transform: translateY(-2px);
+    }
+
+    .prototype-card__image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        padding: 1.25rem;
+        background-color: #e5e7eb;
+    }
+
+    .prototype-card__content {
+        padding: 1.5rem 1.5rem 1.75rem;
+        background-color: #ffffff;
+    }
+
+    .prototype-card__role {
+        margin: 0 0 0.75rem;
+        color: #0b73c5;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+
+    .prototype-card__title {
+        margin: 0 0 0.75rem;
+        color: #0f3557;
+        font-size: 1.375rem;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .prototype-card__description {
+        margin: 0;
+        color: #667085;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .prototype-card__content {
+            padding: 1.25rem;
+        }
+
+        .prototype-card__title {
+            font-size: 1.2rem;
+        }
+
+        .prototype-card__description {
+            font-size: 0.9375rem;
+        }
+    }
+</style>

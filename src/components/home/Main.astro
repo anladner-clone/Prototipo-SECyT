@@ -1,0 +1,99 @@
+---
+import Card from "@components/home/Card.astro";
+
+const listCards = [
+    {
+        image: "/img/cover-card/slug-generico.jpg",
+        rol: "Acceso",
+        title: "Login Institucional",
+        description:
+            "Pantalla de acceso seguro al sistema mediante credenciales institucionales UTN.",
+        link: "/login",
+    },
+    {
+        image: "/img/cover-card/slug-generico.jpg",
+        rol: "Sistema",
+        title: "Página 404",
+        description:
+            "Vista de gestión de errores amigable cuando se intenta acceder a una ruta inexistente.",
+        link: "/404",
+    },
+];
+---
+
+<main class="prototype-gallery">
+    <div class="prototype-gallery__heading">
+        <h1 class="prototype-gallery__title">Seleccione una vista</h1>
+
+        <p class="prototype-gallery__description">
+            Navegue por las distintas interfaces diseñadas para la Secretaría de
+            Ciencia y Tecnología. Haga clic en cualquier tarjeta para
+            previsualizar el módulo correspondiente del sistema.
+        </p>
+    </div>
+
+    <section class="prototype-gallery__grid">
+        {
+            listCards.map(({ image, rol, title, description, link }) => {
+                return (
+                    <Card
+                        image={image}
+                        rol={rol}
+                        title={title}
+                        description={description}
+                        link={link}
+                    />
+                );
+            })
+        }
+    </section>
+</main>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        font-family: "Inter", system-ui, sans-serif;
+    }
+
+    .prototype-gallery {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 3.5rem;
+    }
+
+    .prototype-gallery__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: start;
+    }
+
+    .prototype-gallery__title {
+        margin: 0;
+        color: #0f3557;
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    .prototype-gallery__description {
+        margin: 0;
+        color: #667085;
+        font-size: 1rem;
+        max-width: 65%;
+        text-wrap: balance;
+    }
+
+    .prototype-gallery__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+</style>

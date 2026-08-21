@@ -1,0 +1,140 @@
+<header class="site-header">
+    <div class="site-header__container">
+        <div class="site-header__identity">
+            <img
+                class="site-header__logo"
+                src="/img/logo-utn-siglas.png"
+                alt="UTN Facultad Regional San Francisco"
+            />
+
+            <span class="site-header__separator" aria-hidden="true"></span>
+
+            <div class="site-header__heading">
+                <h1 class="site-header__title">Sistema de Gestión SecYT</h1>
+
+                <p class="site-header__subtitle">
+                    <span
+                        class="site-header__subtitle-icon material-symbols-outlined"
+                        aria-hidden="true"
+                    >
+                        rocket_launch
+                    </span>
+                    Índice de Prototipo
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 1.5rem;
+        margin: 0 auto;
+        max-width: 1200px;
+        border-bottom: 1px solid #aaa5;
+        background: #fff;
+        font-family: "Inter", system-ui, sans-serif;
+    }
+
+    .site-header__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .site-header__identity {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .site-header__logo {
+        width: auto;
+        height: 3rem;
+        object-fit: contain;
+    }
+
+    .site-header__separator {
+        display: none;
+        width: 1px;
+        height: 3rem;
+        background: #aaa5;
+    }
+
+    .site-header__heading {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header__title {
+        margin-bottom: 0.25rem;
+        color: #002b49;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .site-header__subtitle {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #42474d;
+        font-size: 1rem;
+    }
+
+    .site-header__subtitle-icon {
+        color: #0072ce;
+        font-size: 1.25rem;
+        font-variation-settings: "FILL" 1;
+    }
+
+    @media (min-width: 768px) {
+        .site-header {
+            padding-right: 3rem;
+            padding-left: 3rem;
+        }
+
+        .site-header__container {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-header__separator {
+            display: block;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .site-header__identity {
+            flex-wrap: wrap;
+        }
+
+        .site-header__heading {
+            flex: 1 1 100%;
+        }
+
+        .site-header__logo {
+            height: 3.5rem;
+        }
+
+        .site-header__title {
+            font-size: 1.25rem;
+        }
+
+        .site-header__subtitle {
+            font-size: 0.875rem;
+        }
+    }
+</style>
